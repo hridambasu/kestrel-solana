@@ -1,0 +1,32 @@
+[package]
+name = "kestrel"
+version = "0.1.0"
+description = "Kestrel: Solana lending with permissioned RWA collateral, eMode and curated earn vaults"
+edition = "2021"
+rust-version = "1.79"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "kestrel"
+
+[features]
+default = ["mock-oracle"]
+cpi = ["no-entrypoint"]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+idl-build = ["anchor-lang/idl-build", "anchor-spl/idl-build"]
+# Allows the program-owned MockPrice oracle. Disable for mainnet builds.
+mock-oracle = []
+
+[dependencies]
+anchor-lang = { version = "0.31.1", features = ["init-if-needed"] }
+anchor-spl = { version = "0.31.1" }
+uint = { version = "0.10", default-features = false }
+
+[dev-dependencies]
+proptest = "1.5"
+
+[lints.rust]
+# cfgs emitted by Anchor's macros
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(target_os, values("solana"))', 'cfg(feature, values("anchor-debug", "custom-heap", "custom-panic"))'] }

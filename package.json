@@ -1,0 +1,30 @@
+{
+  "name": "kestrel-solana",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "anchor build --no-idl && python3 scripts/build-idl.py && npm run types",
+    "types": "node scripts/gen-types.mjs",
+    "test:unit": "cargo test -p kestrel --lib",
+    "test:e2e": "tsx --test tests/*.test.ts",
+    "localnet": "bash scripts/localnet.sh",
+    "seed": "tsx scripts/seed.ts",
+    "keeper": "tsx keeper/liquidator.ts",
+    "allocator": "tsx keeper/allocator.ts",
+    "crash": "tsx scripts/crash.ts",
+    "status": "tsx scripts/status.ts",
+    "typecheck": "tsc --noEmit",
+    "pusher": "tsx scripts/price-pusher.ts",
+    "ui": "cd app && npm install --silent && npm run dev"
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "0.31.1",
+    "@solana/spl-token": "^0.4.9",
+    "@solana/web3.js": "^1.98.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}

@@ -1,0 +1,120 @@
+:root {
+  --paper: #edf1ea;
+  --surface: #f7f9f5;
+  --ink: #18241e;
+  --moss: #3f6b4e;
+  --muted: #5d6b62;
+  --rule: #cdd6cb;
+  --ochre: #a8740f;
+  --brick: #a63d2f;
+  --zone: #e7d5cf;
+  font-family: "Schibsted Grotesk", system-ui, sans-serif;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #131a16;
+    --surface: #1a231e;
+    --ink: #e3ebe5;
+    --moss: #7fb592;
+    --muted: #94a69a;
+    --rule: #2c3a32;
+    --ochre: #e0ab47;
+    --brick: #ec7a69;
+    --zone: #3a2420;
+  }
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); line-height: 1.5; }
+.shell { max-width: 1160px; margin: 0 auto; padding: 40px 24px 56px; }
+
+.top { margin-bottom: 20px; }
+h1 { font-size: 3.4rem; font-weight: 800; letter-spacing: -0.035em; line-height: 1; margin: 0 0 12px; }
+.lede { font-size: 1.2rem; max-width: 60ch; margin: 0; }
+h2 { font-size: 1.15rem; font-weight: 700; margin: 36px 0 10px; }
+
+/* Health ladder: the page's one loud element */
+.ladder { margin: 12px 0 0; }
+.ladder-track {
+  position: relative;
+  height: 190px;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  overflow: hidden;
+}
+.ladder-zone { position: absolute; inset: 0 auto 0 0; background: var(--zone); }
+.ladder-line { position: absolute; top: 0; bottom: 0; border-left: 2px solid var(--brick); }
+.ladder-line span { position: absolute; top: 8px; left: 8px; font-size: 0.8rem; font-weight: 600; color: var(--brick); white-space: nowrap; }
+.ladder-dot {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 2px solid var(--surface);
+  transition: left 600ms ease;
+}
+.ladder-dot.ok { background: var(--moss); }
+.ladder-dot.warn { background: var(--ochre); }
+.ladder-dot.danger { background: var(--brick); }
+.ladder-label {
+  position: absolute;
+  left: calc(100% + 6px);
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  font-size: 0.85rem;
+}
+.ladder-axis { position: relative; height: 22px; margin-top: 6px; font-size: 0.8rem; color: var(--muted); }
+.ladder-axis span { position: absolute; transform: translateX(-50%); }
+.ladder figcaption { color: var(--muted); font-size: 0.9rem; margin-top: 6px; max-width: 70ch; }
+@media (prefers-reduced-motion: reduce) { .ladder-dot { transition: none; } }
+
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+th, td { text-align: left; padding: 10px 14px 10px 0; border-bottom: 1px solid var(--rule); white-space: nowrap; }
+thead th { font-weight: 500; color: var(--muted); font-size: 0.85rem; }
+tbody th { font-weight: 600; }
+.num { text-align: right; }
+
+.tag {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: color-mix(in srgb, var(--moss) 16%, transparent);
+  color: var(--moss);
+  vertical-align: 1px;
+}
+.tag-rwa { background: color-mix(in srgb, var(--ochre) 18%, transparent); color: var(--ochre); }
+
+.hf { font-weight: 700; padding: 2px 8px; border-radius: 6px; }
+.hf.ok { color: var(--moss); }
+.hf.warn { color: var(--ochre); background: color-mix(in srgb, var(--ochre) 14%, transparent); }
+.hf.danger { color: #fff; background: var(--brick); }
+
+.split { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 40px; align-items: start; }
+.vault { border-top: 3px solid var(--ink); }
+.vault dl { margin: 0 0 18px; display: grid; gap: 10px; }
+.vault dt { color: var(--muted); font-size: 0.85rem; }
+.vault dd { margin: 0; font-size: 1.35rem; font-weight: 700; }
+.cap-head { display: flex; justify-content: space-between; gap: 12px; font-size: 0.9rem; flex-wrap: wrap; }
+.cap-bar { height: 10px; background: var(--rule); border-radius: 999px; margin: 6px 0 4px; overflow: hidden; }
+.cap-bar div { height: 100%; background: var(--moss); }
+
+.muted { color: var(--muted); }
+.small { font-size: 0.85rem; }
+.notice { margin: 10px 0 0; color: var(--ochre); font-weight: 600; }
+.error { color: var(--brick); font-weight: 600; }
+footer { margin-top: 40px; }
+
+@media (max-width: 860px) {
+  .split { grid-template-columns: 1fr; }
+  h1 { font-size: 2.6rem; }
+  .ladder-track { height: 170px; }
+}

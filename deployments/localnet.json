@@ -1,0 +1,32 @@
+{
+  "rpc": "http://127.0.0.1:8899",
+  "programId": "BMM1yXCNsQMthdy6Q5xDZy6Lm26xrGtUqgo5dS6AKKx4",
+  "market": "EdZVV6Yya89SorgzAN89hsMhmQPyGYGHefRy8CJAFEt6",
+  "vault": "7z9BsPCaHJcb7P8Di71f2jNS22SZvycDGXtfSSBkUWrJ",
+  "reserves": {
+    "USDC": {
+      "address": "5QrVBs6jW6Cpu9jZSyNN6Xaa85VjaFeqfBr4xmdFXbNW",
+      "mint": "CB7aVxnB6fP9ugHM1FUSrngARu8zEP1GNpDdyzWhowtQ",
+      "feed": "7T3fCqPGcUF2zyfS8fT6LoyoJAFUVD5WxBGVuSUFHMqa",
+      "decimals": 6
+    },
+    "jitoSOL": {
+      "address": "DKrADvDoifh9mT9Sw5g2Wn3EWmj3gTcjLLAPaDCZeLrK",
+      "mint": "3RgNFbocwfhE6Pr4EHAWyw9RAbMfGAHzPjj8KixWp119",
+      "feed": "CAmTacmojK9rctLiA1YdxLLiAvu2weQXgmuMjCPNb1oP",
+      "decimals": 9
+    },
+    "tBILL": {
+      "address": "77Y3u3L46AjYanVxVvruxu8NrVuLQyHbMeKEQnzPBmgJ",
+      "mint": "BqxFeeVxhTmPdtAsjsESKASNrGKvodAjLZZmveCygjuL",
+      "feed": "7NG9GEKK8fs9hdr8ARc1pqdhraHh5VxHmSFVKbPd3Kw",
+      "decimals": 6
+    }
+  },
+  "obligations": {
+    "safe": "BNdE9NS364muNiH9xebogjyA3bKD4qNJNVBAw5WX9uXK",
+    "risky": "9DTptrRM7GiUsJxnjoMwY9rYMTH9nDvhLU4g68UmWYsm",
+    "rwa": "5Q61FWjuVpVhZTSCZGad6eyAKdMvokJ27w5uwzgywLfw",
+    "looper": "UqqreVSBWHtBNYmZeVb6BTVZJY7HpyDWHDa1wrKsz3R"
+  }
+}
