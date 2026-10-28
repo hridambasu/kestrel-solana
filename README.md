@@ -1,4 +1,4 @@
-# Kestrel — Solana lending with RWA collateral, eMode and curated earn vaults
+# Kestrel - Solana lending with RWA collateral, eMode and curated earn vaults
 
 Kestrel is an Anchor program implementing a Kamino/Solend-style money market,
 aimed at where Solana lending is heading in 2026: **tokenized real-world assets
